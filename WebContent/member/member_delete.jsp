@@ -10,8 +10,6 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
 	<%@ include file="../header.jsp" %>
 <!-- 외부 자바스크립트 파일 불러오기 -->
-<script src="<%=request.getContextPath()%>/member/membercheck.js"></script>
-
 </head>
 <body>
 

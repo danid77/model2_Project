@@ -8,7 +8,8 @@
 <meta charset="UTF-8">
 <title>회원 수정 폼</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="/header.jsp" %>
 <!-- 외부 자바스크립트 파일 불러오기 -->
 <script src="<%=request.getContextPath()%>/member/membercheck.js"></script>
 
@@ -17,26 +18,26 @@
 
 	<form method="post" action="<%=request.getContextPath()%>/MemberUpdate.do" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${member.id}">
-		<table>
+		<table class="type">
 			<caption>회원 정보 수정</caption>
 			<tr>
-				<td>아이디</td>
+				<th>아이디</th>
 				<td>${member.id}</td>
 			</tr>
 			<tr>
-				<td>비밀번호</td>
+				<th>비밀번호</th>
 				<td><input type=password id="passwd" name="passwd"></td>
 			</tr>
 			<tr>
-				<td>비밀번호 확인</td>
+				<th>비밀번호 확인</th>
 				<td><input type=password id="passwd_check" name="passwd_check"></td>
 			</tr>
 			<tr>
-				<td>이름</td>
+				<th>이름</th>
 				<td><input type=text id="name" name="name" value="${member.name}"></td>
 			</tr>
 			<tr>
-				<td>생년월일</td>
+				<th>생년월일</th>
 				<td><input type=text size=4 maxlength=4 id="year" name="year"
 						placeholder="년도(4자)" value="${member.year}"> 
 					<select id="month" name="month">
@@ -58,7 +59,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>성별</td>
+				<th>성별</th>
 				<td>
 					<c:if test="${member.gender == '남자' }">	
 						<input type=radio id="male" name="gender" value="남자" checked> 남자
@@ -71,7 +72,7 @@
 		</td>
 			</tr>
 			<tr>
-				<td>이메일</td>
+				<th>이메일</th>
 				<td><input type=text size=10 id="mailid" name="mailid" value="${member.mailid}">
 					@ <input type=text size=10 id="domain" name="domain" value="${member.domain}"> 
 					<select id="email">
@@ -83,7 +84,7 @@
 					</select></td>
 			</tr>
 			<tr>
-				<td></td>
+				<th>핸드폰</th>
 				<td><select id="phone1" name="phone1">
 					<option value="">번호선택</option>				
 					<option value="010" <c:if test="${member.phone1=='010'}">${'selected'}</c:if> >010</option>
@@ -96,7 +97,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>지역</td>
+				<th>지역</th>
 				<td><select id="local" name="local">
 						<option value="">지역 선택</option>
 						<option value="강남구" <c:if test="${member.local=='강남구'}">${'selected'}</c:if> >강남구</option>
@@ -126,11 +127,11 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td>프로필 이미지</td>
-				<td><input type="file" id="image" name="image"></td>
+				<th>프로필 이미지</th>
+				<td><label class="button" for="image" >업로드</label><input type="file" id="image" name="image" style="display:none"></td>
 			</tr>
 			<tr>
-				<td ><input type=submit value="수정">
+				<td colspan="5" align="center"><input type=submit value="수정">
 					<input type=reset value="취소"></td>
 			</tr>
 		</table>

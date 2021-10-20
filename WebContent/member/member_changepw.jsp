@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 <meta charset="UTF-8">
 <title>비밀번호 변경</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -65,14 +67,14 @@ $(document).ready(function(){
 
 	<form method="post" action="<%=request.getContextPath()%>/MemberChangePW.do">
 	<input type="hidden" name="id" value="${member.id}">
-	<table border=1>
+	<table class="type">
 		<caption>비밀번호 변경</caption>
 		
-		<tr><td><input type="password" id="passwd_old" name="passwd_old" placeholder="현재 비밀번호"></td></tr>
-		<tr><td><input type="password" id="passwd_new" name="passwd_new" placeholder="새 비밀번호"></td></tr>
-		<tr><td><input type="password" id="passwd_new_check" name="passwd_new_check" placeholder="새 비밀번호 확인"></td></tr>
+		<tr><td align="center"><input type="password" id="passwd_old" name="passwd_old" placeholder="현재 비밀번호"></td></tr>
+		<tr><td align="center"><input type="password" id="passwd_new" name="passwd_new" placeholder="새 비밀번호"></td></tr>
+		<tr><td align="center"><input type="password" id="passwd_new_check" name="passwd_new_check" placeholder="새 비밀번호 확인"></td></tr>
 	
-		<tr><td><input type="submit" value="변경"></td></tr>
+		<tr><td align="center"><input type="submit" value="변경"></td></tr>
 	</table>
 	</form>
 </body>
