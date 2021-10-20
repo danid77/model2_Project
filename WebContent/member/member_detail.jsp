@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>마이 페이지</title>
-
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="/header.jsp" %>
 </head>
 <body>
 
 	<form method="post">
-		<table>
+		<table class="type">
 			<caption>마이 페이지</caption>					
 			<tr>
 				<td>
@@ -19,7 +20,7 @@
 					<c:if test="${empty profile}"><img src="./upload/profile.png" width=200px heigh=200px></c:if>
 					<c:if test="${!empty profile}"><img src="./upload/${member.image}" width=200px heigh=200px></c:if>
 				</td>
-				<td>
+				<td class="type">
 					이름:  ${member.name}<br>
 					생년월일: ${member.year}년 ${member.month}월 ${member.day}일<br>
 					성별: ${member.gender}<br>
@@ -41,6 +42,7 @@
 				<tr><td colspan=2>내 모임 리스트</td></tr>
 				<tr><td>리스트 공간</td></tr>			
 			</table>
+				
 	</form>
 
 

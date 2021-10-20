@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>회원 가입 폼</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 
 <!-- 외부 자바스크립트 파일 불러오기 -->
 <script src="<%=request.getContextPath()%>/member/membercheck.js"></script>
@@ -15,28 +17,28 @@
 <body>
 
 	<form method="post" action="<%=request.getContextPath()%>/MemberInsert.do" enctype="multipart/form-data">
-		<table>
+		<table class="type">
 			<caption>회원 가입</caption>
 			<tr>
-				<td>아이디</td>
+				<th>아이디</th>
 				<td><input type=text autofocus="autofocus" id="id" name="id">
 					<input type=button value="중복 검사" id="idcheck">
 					<div id="myid"></div></td>
 			</tr>
 			<tr>
-				<td>비밀번호</td>
+				<th>비밀번호</th>
 				<td><input type=password id="passwd" name="passwd"></td>
 			</tr>
 			<tr>
-				<td>비밀번호 확인</td>
+				<th>비밀번호 확인</th>
 				<td><input type=password id="passwd_check" name="passwd_check"></td>
 			</tr>
 			<tr>
-				<td>이름</td>
+				<th>이름</th>
 				<td><input type=text id="name" name="name"></td>
 			</tr>
 			<tr>
-				<td>생년월일</td>
+				<th>생년월일</th>
 				<td><input type=text size=4 maxlength=4 id="year" name="year"
 						placeholder="년도(4자)"> 
 					<select id="month" name="month">
@@ -58,12 +60,12 @@
 				</td>
 			</tr>
 			<tr>
-				<td>성별</td>
+				<th>성별</th>
 				<td><input type=radio id="male" name="gender" value="남자">남자
 					<input type=radio id="female" name="gender" value="여자">여자</td>
 			</tr>
 			<tr>
-				<td>이메일</td>
+				<th>이메일</th>
 				<td><input type=text size=10 id="mailid" name="mailid">
 					@ <input type=text size=10 id="domain" name="domain"> <select
 					id="email">
@@ -75,7 +77,7 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td>핸드폰</td>
+				<th>핸드폰</th>
 				<td><select id="phone1" name="phone1">
 						<option value="">번호 선택</option>
 						<option value="010">010</option>
@@ -88,7 +90,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>지역</td>
+				<th>지역</th>
 				<td><select id="local" name="local">
 						<option value="">지역 선택</option>
 						<option value="강남구">강남구</option>
@@ -118,11 +120,11 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td>프로필 이미지 *선택</td>
-				<td><input type="file" id="image" name="image"></td>
+				<th>프로필 이미지 *선택</th>
+				<td><label class="button" for="image" >업로드</label><input type="file" id="image" name="image"style="display:none"></td>
 			</tr>
 			<tr>
-				<td><input type=submit value="가입">
+				<td align="center" colspan="5"><input type=submit value="가입" >
 			</tr>
 		</table>
 	</form>
