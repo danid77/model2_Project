@@ -35,11 +35,12 @@
 						onClick="location.href='<%=request.getContextPath()%>/MemberDeleteAction.do'">
 				</td>
 			</tr>
-			<table1>
-			<tr><td colspan=2>내 모임 리스트</td></tr>
-			<tr><td>리스트 공간</td></tr>
-			</table>	
-		</table>
+			</table>
+			
+			<table>	
+				<tr><td colspan=2>내 모임 리스트</td></tr>
+				<tr><td>리스트 공간</td></tr>			
+			</table>
 	</form>
 
 
