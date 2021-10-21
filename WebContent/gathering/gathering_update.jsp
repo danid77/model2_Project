@@ -94,7 +94,7 @@
 	<tr>
 		<td align="center" colspan="5">			
 			<input type=submit value="수정">
-			<input type=reset value="초기화">
+			<input type=reset value="취소" onclick="history.back()">
 			
 			<!-- 상세페이지 가는 기능 넣어야함 -->
 		</td>

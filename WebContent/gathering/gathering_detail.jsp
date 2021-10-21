@@ -46,6 +46,7 @@
 
 				<input type="button" value="목록"
 				onClick="location.href='./GatherListAction.do?page=${page}' ">
+				
 
 			</td>
 		</tr>

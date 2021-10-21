@@ -91,7 +91,7 @@
 
 			<tr align="center" valign="middle">
 				<td colspan="5"><input type=submit value="등록"> <input
-					type=reset value="취소"></td>
+					type=reset value="취소" onClick="history.back()"></td>
 			</tr>
 		</table>
 	</form>
