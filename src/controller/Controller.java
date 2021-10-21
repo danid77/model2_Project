@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.Index;
 import service.Action;
 import service.ActionForward;
 import service.cos.GetCosInfo;
@@ -50,9 +51,18 @@ public class Controller extends HttpServlet {
 
 		Action action = null;
 		ActionForward forward = null;
+		
+			// index 게시판 불러오기
+		if (command.equals("/index.do")) {
+			try {
+				action = new Index();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-		// 회원 가입
-		if (command.equals("/MemberInsert.do")) {
+			// 회원 가입
+		} else if (command.equals("/MemberInsert.do")) {
 			try {
 				action = new MemberInsert();
 				forward = action.execute(request, response);
