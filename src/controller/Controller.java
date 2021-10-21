@@ -15,6 +15,14 @@ import service.cos.GetCosInfo;
 import service.cos.GetCosList;
 import service.cos.GetReply;
 import service.cos.ReplyWriteAction;
+import service.gathering.GatherAddAction;
+import service.gathering.GatherCrewList;
+import service.gathering.GatherCrewListView;
+import service.gathering.GatherDelete;
+import service.gathering.GatherDetailAction;
+import service.gathering.GatherListAction;
+import service.gathering.GatherModify;
+import service.gathering.GatherModifyAction;
 import service.member.MemberChangePW;
 import service.member.MemberChangePWAction;
 import service.member.MemberDelete;
@@ -224,6 +232,90 @@ public class Controller extends HttpServlet {
 			try {
 				action = new GetReply();
 				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			// 모임 게시판
+			// 글작성
+		} else if (command.equals("/GatherAddAction.do")) {
+			try {
+				action = new GatherAddAction(); // 업캐스팅
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 글작성 폼
+		} else if (command.equals("/GatherForm.do")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/gathering/gathering_create.jsp");
+
+			// 모임 목록
+		} else if (command.equals("/GatherListAction.do")) {
+			try {
+				action = new GatherListAction();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 상세페이지
+		} else if (command.equals("/GatherDetailAction.do")) {
+			try {
+				action = new GatherDetailAction();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 모임 가입
+		} else if (command.equals("/GatherCrewList.do")) {
+			try {
+				action = new GatherCrewList();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 모임원 정보 조회(jsp로 경로 설정할까??)
+		} else if (command.equals("/GatherCrewListView.do")) {
+			try {
+				action = new GatherCrewListView();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 글 수정 폼
+		} else if (command.equals("/GatherModifyAction.do")) {
+			try {
+				action = new GatherModifyAction();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 글 수정
+		} else if (command.equals("/GatherModify.do")) {
+			try {
+				action = new GatherModify();
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// 글삭제 폼
+		} else if (command.equals("/GatherDeleteAction.do")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/gathering/gathering_delete.jsp");
+
+			// 글 삭제
+		} else if (command.equals("/GatherDelete.do")) {
+			try {
+				action = new GatherDelete();
+				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
