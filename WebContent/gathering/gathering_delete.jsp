@@ -5,8 +5,8 @@
 <title>gathering Write</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <!-- 	<script src="<%=request.getContextPath()%>/gathering/gather.js"></script>	-->
-<link rel="stylesheet" href="/gathering_table.css">
-<%@ include file="/header.jsp"%>
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 </head>
 <body>
 	<form action="<%=request.getContextPath()%>/GatherDelete.do"

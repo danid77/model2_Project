@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/gathering_table.css">
-<%@ include file="/header.jsp"%>
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 <meta charset="UTF-8">
 <title>비밀번호 변경</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
