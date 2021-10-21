@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/gathering_table.css">
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="/cos/comment.js"></script>
+<script src="<%=request.getContextPath()%>/cos/comment.js"></script>
 <title>등산코스 페이지</title>
 
 </head>
@@ -25,8 +25,7 @@
 				<div id="map" style="width: 500px; height: 400px;"></div> <script
 					type="text/javascript"
 					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4f2288fb9ad2f5f8a631f9dd4490a2ff">
-            </script> 
-            <script>
+            </script> <script>
                 var container = document.getElementById('map');
                 var options = {
                     center: new kakao.maps.LatLng(${cosInfo.cosLatitude}, ${cosInfo.cosLongitude}),
@@ -37,14 +36,10 @@
 
                 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
                 var positions = [];
-                </script>                   
-                
+                </script> <script type="text/javascript"
+					src="<%=request.getContextPath()%>/cos/cos2.js"></script> <%-- 				<script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos3.js"></script>  --%>
 
-
- 				<script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos2.js"></script>
-<%-- 				<script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos3.js"></script>  --%>
-           
-           <script type="text/javascript">
+				<script type="text/javascript">
                 // 지도에 표시할 선을 생성합니다
                 var polyline = new kakao.maps.Polyline({
                     path: linePath2, // 선을 구성하는 좌표배열 입니다
@@ -56,11 +51,9 @@
 
                 // 지도에 선을 표시합니다 
                 polyline.setMap(map);  
-                </script>
-                
-                <script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos3.js"></script> 
-                
-                <script type="text/javascript">
+                </script> <script type="text/javascript"
+					src="<%=request.getContextPath()%>/cos/cos3.js"></script> <script
+					type="text/javascript">
                      // 지도에 표시할 선을 생성합니다
                      var polyline = new kakao.maps.Polyline({
                          path: linePath3, // 선을 구성하는 좌표배열 입니다

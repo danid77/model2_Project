@@ -10,9 +10,12 @@ import service.ActionForward;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CommentDAO;
 import dao.CosDAO;
+import dto.CommentBean;
 import dto.CosDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -42,7 +45,11 @@ public class GetCosInfo implements Action{
 		List<FacilitiesDTO> facilities = facilDAO.getInfo(cosName);
 		request.setAttribute("facilities", facilities);
 
+		// 댓글 공유
+		CommentDAO commentDAO = CommentDAO.getInstance();
+		ArrayList<CommentBean> commentList = commentDAO.getCommentList(cosName);
 
+		if(commentList.size() > 0) request.setAttribute("commentList", commentList);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
