@@ -10,7 +10,7 @@
 
 <script>
 	alert("로그인 되었습니다.");
-	location.href="<%=request.getContextPath()%>/Main.do";	
+	location.href="<%=request.getContextPath()%>/index.jsp";	
 </script>
 
 </body>
