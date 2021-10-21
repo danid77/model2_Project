@@ -2,9 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="/header.jsp" %>
 
-
-<table border=1 width=700 align=center>
+<table class="type">
 	<caption>코스목록</caption>
 	<tr>
 		<th>등산코스명</th>
