@@ -1,3 +1,7 @@
+{margin: 0px; padding : 0px;}
+ul{list-style:none}/* list 앞 점 제거*/
+a{text-decoration:none;}/*링크 밑줄 제거*/
+
 table.type{
   border-top: 1px solid gold;
 /*	width: 700px;	*/
