@@ -1,0 +1,89 @@
+css jsp 홈페이지
+{margin: 0px; padding : 0px;}
+ul{list-style:none}/* list 앞 점 제거*/
+a{text-decoration:none;}/*링크 밑줄 제거*/
+
+header{
+	background-position:center top;
+	background-image:url("./image/background.png");
+	background-align:center;
+	background-repeat:no-repeat;
+	background-size:100%100%
+}
+.title{
+	position:border;
+	background-image:url("./image/title.png");
+}
+/*
+.nav{
+	position:relative;
+	left:110px;
+	top:50px;
+	margin-left:auto;
+	margin-ringht:auto;
+	transform: translateY(-50%);
+}
+*/
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.nav-item{
+	padding:15px;
+	corsor:pointer;
+}
+.nav-itemImg a{
+	padding:10px;
+	padding-left:40px;
+	position:relative;
+	text-aligen : center;
+	text-dcaoration:none;
+	top:50%
+	
+}
+.nav-item a{
+	position:relative;
+	text-aligen : center;
+	top:50%;
+	text-dcaoration:none;
+	color: white;
+	padding: 10px 50px; 
+	font-size:36px;
+	font-family:HYGothic-Extra;
+	
+}
+.loginfo-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.loginfo-item{
+	padding:15px;
+	corsor:pointer;
+}
+.loginfo-item a{
+	position:relative;
+	color: white;
+	padding: 20px 50px;
+	font-size:24px;
+	font-family:HYGothic-Extra;
+}
+
