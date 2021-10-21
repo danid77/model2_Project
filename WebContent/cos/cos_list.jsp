@@ -16,7 +16,7 @@
 	<c:forEach var="cos" items="${coslist}">
 		<tr>
 			<td>
-				<a href="/GetCosInfo.do?cosName=${cos.cosName}">${cos.cosName}</a>
+				<a href="./GetCosInfo.do?cosName=${cos.cosName}">${cos.cosName}</a>
 			</td>
 			<td>${cos.cosDifficulty}</td>
 			<td>${cos.cosTakeTime}</td>

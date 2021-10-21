@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.Action;
 import service.ActionForward;
+import service.cos.GetCosInfo;
 import service.cos.GetCosList;
+import service.cos.GetReply;
+import service.cos.ReplyWriteAction;
 import service.member.MemberChangePW;
 import service.member.MemberChangePWAction;
 import service.member.MemberDelete;
@@ -192,6 +195,7 @@ public class Controller extends HttpServlet {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./member/main.jsp");
+			// 등산 코스 리스트 
 		} else if (command.equals("/GetCosList.do")) {
 			try {
 				action = new GetCosList();
@@ -199,7 +203,31 @@ public class Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+			// 등산 코스 상세 페이지
+		} else if (command.equals("/GetCosInfo.do")) {
+            try {
+                action = new GetCosInfo();
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // 댓글 작성 
+        } else if (command.equals("/ReplyWriteAction.do")) {
+            try {
+                action = new ReplyWriteAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // 댓글 불러오기
+        } else if (command.equals("/GetReply.do")) {
+            try {
+                action = new GetReply();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
 		// if(command.equals("/MemberInsert.do")) end
 
