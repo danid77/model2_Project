@@ -9,9 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import service.Index;
 import service.Action;
 import service.ActionForward;
+import service.Index;
+import service.cos.CommentDeleteAction;
+import service.cos.CommentReplyAction;
+import service.cos.CommentReplyFormAction;
+import service.cos.CommentUpdateAction;
+import service.cos.CommentUpdateFormAction;
+import service.cos.CommentWriteAction;
 import service.cos.GetCosInfo;
 import service.cos.GetCosList;
 import service.cos.GetReply;
@@ -329,7 +335,49 @@ public class Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		} else if (command.equals("/CommentWriteAction.do")) {
+            try {
+                action = new CommentWriteAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/CommentReplyFormAction.do")) {
+            try {
+                action = new CommentReplyFormAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/CommentReplyAction.do")) {
+            try {
+                action = new CommentReplyAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/CommentDeleteAction.do")) {
+            try {
+                action = new CommentDeleteAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/CommentUpdateFormAction.do")) {
+            try {
+                action = new CommentUpdateFormAction();
+                action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else  if (command.equals("/CommentUpdateAction.do")){
+            try{
+                action = new CommentUpdateAction();
+                action.execute(request, response);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
 
 		// if(command.equals("/MemberInsert.do")) end
 

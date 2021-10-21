@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/gathering_table.css">
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="/cos/reply.js"></script>
+<script src="/cos/comment.js"></script>
 <title>등산코스 페이지</title>
 
 </head>
@@ -121,36 +121,78 @@
 	</table>
 	<br>
 	<br>
-	
-	<div>
-		<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">댓글</div>
-		<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">
-			
-			<c:if test="${ id == null }">
-					<textarea align="center" rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
-			</c:if>
-			
-			<c:if test="${ id != null }">
-				<i class="fa fa-user w3-padding-16"></i> ${ id }
-            	
-            	<form>
-					<input type="hidden" name="cos_name" id="cos_name"
-						value="${ cosInfo.cosName }">
-						<input type="hidden" name="id" id="id" value="${ id }">
-					<textarea align="center" rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="reply_content" id="reply_content"></textarea>
-					<input type="button" class="w3-button w3-border" id="reply_btn" value="댓글 등록">
-				
-				</form>
-			</c:if>
-			<%--    <script src="/cos/reply.js"></script>--%>
 
-		</div>
-		<div>
-			<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">
-				댓글목록(<i class="fa fa-commenting-o" align="center" font-family="Sans-Serif"></i> <span class="reply_count" align="center" font-family="Sans-Serif"></span>)
-			</div>
-			<div id="replyList" align="center" font-family="Sans-Serif"></div>
-		</div>
+	<!-- 댓글 부분 -->
+	<div id="comment">
+		<table border="1" bordercolor="lightgray">
+			<!-- 댓글 목록 -->
+			<c:if test="${requestScope.commentList != null}">
+				<c:forEach var="comment" items="${requestScope.commentList}">
+
+					<tr>
+						<!-- 아이디, 작성날짜 -->
+						<td width="150">
+							<div>
+								<c:if test="${comment.comment_level > 1}">
+                                &nbsp;&nbsp;&nbsp;&nbsp; <!-- 답변글일경우 아이디 앞에 공백을 준다. -->
+								</c:if>
+
+
+								${comment.comment_id}<br> <font size="2" color="lightgray">
+									${comment.comment_date}</font>
+							</div>
+						</td>
+						<!-- 본문내용 -->
+						<td width="550">
+							<div class="text_wrapper">${comment.comment_content}</div>
+						</td>
+						<!-- 버튼 -->
+						<td width="100">
+							<div id="btn" style="text-align: center;">
+								<a href="#" onclick="cmReplyOpen(${comment.comment_num})">[답변]</a><br>
+								<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
+								<c:if test="${comment.comment_id == sessionScope.id}">
+									<a href="#" onclick="cmUpdateOpen(${comment.comment_num})">[수정]</a>
+									<br>
+									<a href="#" onclick="cmDeleteOpen(${comment.comment_num})">[삭제]</a>
+								</c:if>
+							</div>
+						</td>
+					</tr>
+
+				</c:forEach>
+			</c:if>
+
+			<!-- 로그인 했을 경우만 댓글 작성가능 -->
+			<c:if test="${sessionScope.id !=null}">
+				<tr bgcolor="#F5F5F5">
+					<form id="writeCommentForm">
+						<input type="hidden" name="comment_board"
+							value="${cosInfo.cosName}"> <input type="hidden"
+							name="comment_id" value="${sessionScope.id}">
+						<!-- 아이디-->
+						<td width="150">
+							<div>${sessionScope.id}</div>
+						</td>
+						<!-- 본문 작성-->
+						<td width="550">
+							<div>
+								<textarea name="comment_content" rows="4" cols="70"></textarea>
+							</div>
+						</td>
+						<!-- 댓글 등록 버튼 -->
+						<td width="100">
+							<div id="btn" style="text-align: center;">
+								<p>
+									<a href="#" onclick="writeCmt()">[댓글등록]</a>
+								</p>
+							</div>
+						</td>
+					</form>
+				</tr>
+			</c:if>
+
+		</table>
 	</div>
 
 
