@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
-	<%@ include file="/header.jsp" %>
-    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="gathering_table.css">
+<%@ include file="header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +12,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<form method="get" action="<%=request.getContextPath()%>/GetCosList.do">
-	<input type="submit" value="귀찮아">
-	</form>
-	
-	<form method="get" action="member/main.jsp">
-	<input type="submit" value="회원">
-	</form>
+<div style="width:48%; marge:10px; float:left;">
+	<%@ include file="cos/cos_list2.jsp" %>
+	</div>
+<div style="width:48%; marge:10px; float:left;">
+	<%@ include file="gathering/gathering_list2.jsp" %>
+	</div>
 </body>
 </html>

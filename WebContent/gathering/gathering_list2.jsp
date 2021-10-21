@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-	<link rel="stylesheet" href="/gathering_table.css">
-	<%@ include file="/header.jsp" %>
 
 <table class="type" width="700px">
 <tbody>
@@ -35,11 +33,10 @@
 	</c:forEach>
 </tbody>
 </table><br><br>
-<div style="font-family:none; float:right;">
+
 <a href="./GatherForm.do">글쓰기</a>
 <br>
 모임 갯수 : ${listcount}개
-</div>
 <br>
 
 <!-- 페이지 처리 -->
