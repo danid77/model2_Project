@@ -1,7 +1,7 @@
 css jsp 홈페이지
 {margin: 0px; padding : 0px;}
 ul{list-style:none}/* list 앞 점 제거*/
-a{text-decoration:none;}/*링크 밑줄 제거*/
+a{text-decoration:none; color:black;}/*링크 밑줄 제거*/
 
 header{
 	background-position:center top;

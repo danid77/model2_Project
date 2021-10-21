@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
 	<%@ include file="/header.jsp" %>
 
-<table class="type">
+<table class="type" width="700px">
 	<caption>코스목록</caption>
 	<tr>
 		<th>등산코스명</th>
