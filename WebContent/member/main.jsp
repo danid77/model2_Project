@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
-	<%@ include file="/header.jsp" %>
 
 <!-- 세션이 있는 경우 -->
 <c:if test="${sessionScope.id != null }">
