@@ -1,0 +1,80 @@
+table.type{
+  border-top: 1px solid gold;
+	width: 900px;
+<!--	height:	800px;-->	
+	border-collapse:separate;
+	border-spacing:1px;
+	text-align:left;
+	line-hight:1.5;
+	margin: auto;
+	margin-top:50px;
+	font-family: sans-serif;
+	font-size:18px;
+}
+table.type th {
+  width: 600px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid gold;
+  background: gold;
+	font-family: sans-serif;
+	font-size:18px;
+	hight:20;
+	text-align:center;
+}
+table.type td {
+  width: 700px;
+  padding: 10px;
+  vertical-align:middle;
+  border-bottom: 1px solid gold;
+	font-family: sans-serif;
+	font-size:18px;
+	hight:20;
+	text-align:auto;
+}
+table.type div {
+	width: 100px;
+  vertical-align: middle;
+  margin : auto;
+  font-family: sans-serif;
+}
+input[type=reset],input[type=submit],input[type=button]{
+	width:120px;
+	font-family: sans-serif;
+		color:black;
+	background-color:gold;
+	font-size:16px;
+	hight:30px;
+	border-radius:10px;
+	border-color:gold;
+	
+}
+select,input[type=text],input[type=password]{
+	width:300px;
+	hight:30px;
+	border-radius:5px;
+	border-color:gold;
+	font-family:Sans-Serif;
+	font-size:18px;
+	hight:20;;
+	font-size:16px;
+}
+textarea{
+	font-family: sans-serif;
+	width:600px;
+	height:300px;
+	
+}
+input[type=file]{
+	
+}
+.table l
+
+
+div[type=login_bottom]{
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+}
