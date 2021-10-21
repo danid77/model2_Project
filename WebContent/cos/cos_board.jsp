@@ -7,17 +7,18 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <html>
 <head>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/gathering_table.css">
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/cos/reply.js"></script>
 <title>등산코스 페이지</title>
 
 </head>
 <body>
-	<table border="1">
+	<jsp:include page="/header.jsp" flush="true" />
+	<table class="type">
 		<caption>${cosInfo.cosName}</caption>
 		<tr>
 			<td colspan="2">
@@ -80,25 +81,25 @@
 			</td>
 		</tr>
 		<tr>
-			<td>난이도</td>
+			<th>난이도</th>
 			<td>${cosInfo.cosDifficulty}</td>
 		</tr>
 		<tr>
-			<td>길이</td>
+			<th>길이</th>
 			<td>${cosInfo.cosLength}</td>
 		</tr>
 		<tr>
-			<td>소요 시간</td>
+			<th>소요 시간</th>
 			<td>${cosInfo.cosTakeTime}</td>
 		</tr>
 		<tr>
-			<td>길찾기</td>
+			<th>길찾기</th>
 			<td><a href="${cosInfo.cosLink}">길찾기</a></td>
 		</tr>
 
 	</table>
 
-	<table>
+	<table class="type" width="800px">
 		<caption>맛집 & 명소 목록</caption>
 		<tr>
 			<th>이름</th>
@@ -120,34 +121,35 @@
 	</table>
 	<br>
 	<br>
-
+	
 	<div>
-		<div class="w3-border w3-padding">댓글</div>
-		<div class="w3-border w3-padding">
+		<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">댓글</div>
+		<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">
+			
 			<c:if test="${ id == null }">
-				<textarea rows="5" cols="50" class="w3-input w3-border newLogin"
-					readonly>로그인 후 댓글 달기</textarea>
+					<textarea align="center" rows="5" cols="50" class="w3-input w3-border newLogin" readonly>로그인 후 댓글 달기</textarea>
 			</c:if>
+			
 			<c:if test="${ id != null }">
 				<i class="fa fa-user w3-padding-16"></i> ${ id }
-            <form>
+            	
+            	<form>
 					<input type="hidden" name="cos_name" id="cos_name"
-						value="${ cosInfo.cosName }"> <input type="hidden"
-						name="id" id="id" value="${ id }">
-					<textarea rows="5" cols="50" class="w3-input w3-border"
-						placeholder="댓글 작성" name="reply_content" id="reply_content"></textarea>
-					<input type="button" class="w3-button w3-border" id="reply_btn"
-						value="댓글 등록">
+						value="${ cosInfo.cosName }">
+						<input type="hidden" name="id" id="id" value="${ id }">
+					<textarea align="center" rows="5" cols="50" class="w3-input w3-border" placeholder="댓글 작성" name="reply_content" id="reply_content"></textarea>
+					<input type="button" class="w3-button w3-border" id="reply_btn" value="댓글 등록">
+				
 				</form>
 			</c:if>
 			<%--    <script src="/cos/reply.js"></script>--%>
 
 		</div>
 		<div>
-			<div class="w3-border w3-padding">
-				댓글목록(<i class="fa fa-commenting-o"></i> <span class="reply_count"></span>)
+			<div class="w3-border_w3-padding" align="center" font-family="Sans-Serif">
+				댓글목록(<i class="fa fa-commenting-o" align="center" font-family="Sans-Serif"></i> <span class="reply_count" align="center" font-family="Sans-Serif"></span>)
 			</div>
-			<div id="replyList"></div>
+			<div id="replyList" align="center" font-family="Sans-Serif"></div>
 		</div>
 	</div>
 

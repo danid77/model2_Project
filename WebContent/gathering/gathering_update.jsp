@@ -6,6 +6,8 @@
 	<title>gathering Write</title>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="<%=request.getContextPath()%>/gathering/gather.js"></script>
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 </head>
 <body>
 
@@ -13,40 +15,32 @@
 <input type="hidden" name="no" value="${gather.no}">
 <input type="hidden" name="page" value="${page}">
 	  
-	  <h2 align="center">Santago 등산모임 게시판 수정</h2>
 	  
-<table cellpadding="0" cellspacing="0" align=center border=1>
+<table class="type" width="800px">
+	  <caption>Santago 등산모임 게시판 수정</caption>
 	
 	<tr>
-		<td style="font-family:돋음; font-size:14" height="16">
-			<div align="center">모임이름</div>
-		</td>
+		<th>모임이름</th>
 		<td>
 			<input name="gathersubject" id="gathersubject" type="text" value="${gather.gathersubject}"/>
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<div>작성자</div>
-		</td>
+		<th>작성자</th>
 		<td>
 			<input name="id" id="id" type="text" value="${gather.id}" readonly="readonly"/>
 		</td>
 	</tr>
 	
 	<tr>
-		<td>
-			<div>비밀번호</div>
-		</td>
+		<th>비밀번호</th>
 		<td>
 			<input name="gatherpw" id="gatherpw" type="password" value=""/>
 		</td>
 	</tr>
 		
 	<tr>
-		<td>
-		<div>지역</div>
-		</td>
+		<th>지역</th>
 		<td><select id="local" name="local">
 			<option value="">지역 선택</option>
 			<option value="강남구" <c:if test="${gather.local == '강남구'}">${'selected'}</c:if> >강남구</option>
@@ -77,9 +71,7 @@
 		</td>
 	</tr>
 	<tr>
-	<td>
-		<div>인원수</div>
-		</td>
+	<th>인원수</th>
 	<td><select id="membercnt" name="membercnt">
 				<option value="">0</option>
 				<option value="1" <c:if test="${gather.membercnt == '1'}">${'selected'}</c:if> >1</option>
@@ -93,20 +85,14 @@
 	</tr>
 	
 	<tr>
-		<td>
-			<div>Content</div>
-		</td>
+		<th>Content</th>
 		<td>
 			<textarea name="content" id="content">${gather.content} </textarea>
 		</td>
 	</tr>
 	
 	<tr>
-		<td>
-		</td>
-	</tr>
-	<tr>
-		<td>			
+		<td align="center" colspan="5">			
 			<input type=submit value="수정">
 			<input type=reset value="초기화">
 			

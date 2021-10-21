@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
-
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <script>

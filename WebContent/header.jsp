@@ -33,8 +33,7 @@
 					<ul class="nav-container">
 						<li class ="nav-itemImg"><a href="<%=request.getContextPath()%>index.jsp"><img src="<%=request.getContextPath()%>/image/title.png" style="padding:10px; padding-left:40px;"></a></li>			
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/GetCosList.do">등산페이지</a> </li>
-						<li class="nav-item"><a href="<%=request.getContextPath()%>">모임게시판</a> </li>
-						<li class="nav-item"><a href="<%=request.getContextPath()%>">상품게시판</a> </li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/GatherList.do">모임게시판</a> </li>
 					</ul>
 				</nav>
 			 </div>

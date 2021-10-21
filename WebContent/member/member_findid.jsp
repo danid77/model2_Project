@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 찾기</title>
-
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+	<%@ include file="../header.jsp" %>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <script>
@@ -46,7 +47,7 @@
 <body>
 
 	<form method="post" action="<%=request.getContextPath()%>/MemberFindID.do">
-		<table>
+		<table class="type">
 			<tr>
 				<th colspan=2>아이디 찾기</th>
 			</tr>

@@ -38,9 +38,9 @@
 			</tr>
 			</table>
 			
-			<table>	
-				<tr><td colspan=2>내 모임 리스트</td></tr>
-				<tr><td>리스트 공간</td></tr>			
+			<table class="type" >	
+				<tr><th colspan=2>내 모임 리스트</th></tr>
+				<tr><th>리스트 공간</th></tr>			
 			</table>
 				
 	</form>
