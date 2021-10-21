@@ -6,8 +6,8 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<%=request.getContextPath()%>/gathering/gather.js"></script>
 
-<link rel="stylesheet" href="/gathering_table.css">
-<%@ include file="/header.jsp"%>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/gathering_table.css">
+<%@ include file="../header.jsp"%>
 <!--  스타일용 코드  -->
 </head>
 <body>
