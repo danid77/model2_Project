@@ -12,7 +12,8 @@ import java.io.PrintWriter;
 public class CommentUpdateAction implements Action {
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        int comment_num = Integer.parseInt(request.getParameter("comment_num"));
+        System.out.println("CommentUpdateAction.java");
+    	int comment_num = Integer.parseInt(request.getParameter("comment_num"));
         String comment_content = request.getParameter("comment_content");
 
         CommentDAO dao = CommentDAO.getInstance();
