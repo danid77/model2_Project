@@ -47,7 +47,7 @@
 <body>
 
 	<form method="post" action="<%=request.getContextPath()%>/MemberFindPW.do">
-		<table>
+		<table class="type">
 			<tr>
 				<th colspan=2>비밀번호 찾기</th>
 			</tr>
@@ -70,7 +70,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="확인"></td>
+				<td colspan="5" align="center"><input type="submit" value="확인"></td>
 			</tr>
 		
 		</table>
