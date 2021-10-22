@@ -37,7 +37,7 @@
                 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
                 var positions = [];
                 </script> <script type="text/javascript"
-					src="<%=request.getContextPath()%>/cos/cos2.js"></script> <%-- 				<script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos3.js"></script>  --%>
+					src="<%=request.getContextPath()%>/cos/cos2.js"></script>
 
 				<script type="text/javascript">
                 // 지도에 표시할 선을 생성합니다
@@ -51,14 +51,33 @@
 
                 // 지도에 선을 표시합니다 
                 polyline.setMap(map);  
-                </script> <script type="text/javascript"
-					src="<%=request.getContextPath()%>/cos/cos3.js"></script> <script
+                </script> 
+                
+                
+                <script type="text/javascript"
+					src="<%=request.getContextPath()%>/cos/cos3.js"></script> 
+					<script
 					type="text/javascript">
                      // 지도에 표시할 선을 생성합니다
                      var polyline = new kakao.maps.Polyline({
                          path: linePath3, // 선을 구성하는 좌표배열 입니다
                          strokeWeight: 5, // 선의 두께 입니다
                          strokeColor: 'red', // 선의 색깔입니다
+                         strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                         strokeStyle: 'solid' // 선의 스타일입니다
+                     });
+
+                     // 지도에 선을 표시합니다 
+                     polyline.setMap(map);
+                     </script>
+                     
+                     <script type="text/javascript" src="<%=request.getContextPath()%>/cos/cos4.js"></script>
+				<script type="text/javascript">
+                     // 지도에 표시할 선을 생성합니다
+                     var polyline = new kakao.maps.Polyline({
+                         path: linePath4, // 선을 구성하는 좌표배열 입니다
+                         strokeWeight: 5, // 선의 두께 입니다
+                         strokeColor: 'darkblue', // 선의 색깔입니다
                          strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
                          strokeStyle: 'solid' // 선의 스타일입니다
                      });
@@ -153,8 +172,7 @@
 
 	<!-- 댓글 부분 -->
 	<div id="comment">
-		<table class="type" 
-			style="align: center;">
+		<table class="type" style="align: center;">
 			<!-- 댓글 목록 -->
 			<c:if test="${requestScope.commentList != null}">
 				<c:forEach var="comment" items="${requestScope.commentList}">
@@ -177,8 +195,8 @@
 							<div class="text_wrapper">${comment.comment_content}</div>
 						</td>
 						<!-- 버튼 -->
-						<th width="100" style="font-size:5px;">
-							<div id="btn" style="text-align:center;font-size:15px;">
+						<th width="100" style="font-size: 5px;">
+							<div id="btn" style="text-align: center; font-size: 15px;">
 								<a href="#" onclick="cmReplyOpen(${comment.comment_num})">[답변]</a><br>
 								<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 								<c:if test="${comment.comment_id == sessionScope.id}">
@@ -205,9 +223,8 @@
 							<div>${sessionScope.id}</div>
 						</th>
 						<!-- 본문 작성-->
-						<td width="550">
-								<textarea name="comment_content" rows="4" cols="70"></textarea>
-							</td>
+						<td width="550"><textarea name="comment_content" rows="4"
+								cols="70"></textarea></td>
 						</th>
 						<!-- 댓글 등록 버튼 -->
 						<th width="100">
