@@ -7,7 +7,6 @@
 <table class="type">
 	<caption>${gather_name}</caption>
 	<tr>
-		<th>번호</th>
 		<th>아이디</th>
 		<th>지역</th>
 		<th>성별</th>

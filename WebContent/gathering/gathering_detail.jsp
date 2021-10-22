@@ -22,8 +22,8 @@
 
 		<tr>
 
-			<th>모임인원</th>
-			<td>${gather.membercnt}</td>
+			<th>모임 인원</th>
+			<td>${peoplecnt}/${gather.membercnt}</td>
 			<th width="200px">지역</th>
 			<td width="400px">${gather.local}</td>
 		</tr>

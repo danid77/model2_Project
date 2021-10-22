@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.GatherDAO;
+import dao.PeopleDAO;
 import dto.GatherDTO;
 import service.Action;
 import service.ActionForward;
@@ -17,7 +18,7 @@ public class GatherDetailAction implements Action{
 		
 		int no = Integer.parseInt(request.getParameter("no"));
 		String page = request.getParameter("page");
-		System.out.println("page값:"+page);
+
 		GatherDAO dao = GatherDAO.getGatherInstance();
 		GatherDTO gather = dao.getDetail(no);
 		
@@ -28,6 +29,13 @@ public class GatherDetailAction implements Action{
 		request.setAttribute("content", content);
 		request.setAttribute("gather", gather);
 		request.setAttribute("page", page);
+		
+		// 모임의 현재 참여 인원 구하기
+		PeopleDAO pdao = PeopleDAO.getPeopleInstance();
+		int peoplecnt = pdao.peoplecnt(no);
+		
+		// 공유 설정
+		request.setAttribute("peoplecnt", peoplecnt);
 		
 		ActionForward forword = new ActionForward();
 		forword.setRedirect(false);
