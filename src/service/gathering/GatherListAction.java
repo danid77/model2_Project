@@ -56,11 +56,11 @@ public class GatherListAction implements Action {
 		request.setAttribute("endPage", endPage);					//int
 		
 		
-		ActionForward forword = new ActionForward();
-		forword.setRedirect(false);
-		forword.setPath("./gathering/gathering_list.jsp");
+		ActionForward forward = new ActionForward();
+		forward.setRedirect(false);
+		forward.setPath("./gathering/gathering_list.jsp");
 		
-		return forword;
+		return forward;
 	}
 
 }
