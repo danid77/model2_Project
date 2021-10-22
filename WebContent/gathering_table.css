@@ -70,7 +70,12 @@ textarea{
 	font-family: sans-serif;
 	width:600px;
 	height:300px;
-	
+}
+textarea[type=comment_content]{
+	font-family: sans-serif;
+	width:600px;
+	height:300px;
+	align:center;
 }
 
 caption{

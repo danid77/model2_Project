@@ -177,8 +177,8 @@
 							<div class="text_wrapper">${comment.comment_content}</div>
 						</td>
 						<!-- 버튼 -->
-						<th width="100">
-							<div id="btn" style="text-align: center;">
+						<th width="100" style="font-size:5px;">
+							<div id="btn" style="text-align:center;font-size:15px;">
 								<a href="#" onclick="cmReplyOpen(${comment.comment_num})">[답변]</a><br>
 								<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 								<c:if test="${comment.comment_id == sessionScope.id}">
@@ -195,29 +195,28 @@
 
 			<!-- 로그인 했을 경우만 댓글 작성가능 -->
 			<c:if test="${sessionScope.id !=null}">
-				<tr bgcolor="#F5F5F5">
+				<tr>
 					<form id="writeCommentForm">
 						<input type="hidden" name="comment_board"
 							value="${cosInfo.cosName}"> <input type="hidden"
 							name="comment_id" value="${sessionScope.id}">
 						<!-- 아이디-->
-						<td width="150">
+						<th width="150">
 							<div>${sessionScope.id}</div>
-						</td>
+						</th>
 						<!-- 본문 작성-->
 						<td width="550">
-							<div>
 								<textarea name="comment_content" rows="4" cols="70"></textarea>
-							</div>
-						</td>
+							</td>
+						</th>
 						<!-- 댓글 등록 버튼 -->
-						<td width="100">
+						<th width="100">
 							<div id="btn" style="text-align: center;">
 								<p>
 									<a href="#" onclick="writeCmt()">[댓글등록]</a>
 								</p>
 							</div>
-						</td>
+						</th>
 					</form>
 				</tr>
 			</c:if>
