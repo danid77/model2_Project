@@ -61,10 +61,10 @@
                 return false;
             } else {
                 var param = "comment_num=" + comment_num + "&comment_content=" + comment_content;
-
+				var path = "./CommentUpdateAction.do";
                 httpRequest = getXMLHttpRequest();
                 httpRequest.onreadystatechange = checkFunc;
-                httpRequest.open("POST", "CommentUpdateAction.co", true);
+                httpRequest.open("POST", path, true);
                 httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=EUC-KR');
                 httpRequest.send(param);
             }
@@ -97,7 +97,7 @@
 
     <div id="commentUpdateForm">
         <form name="updateInfo" target="parentForm">
-            <textarea rows="7" cols="70" name="comment_content">${comment.comment_content}</textarea>
+            <textarea rows="7" cols="70" name="comment_content">${sessionScope.comment.comment_content}</textarea>
             <br><br>
             <input type="button" value="등록" onclick="checkValue()">
             <input type="button" value="창닫기" onclick="window.close()">

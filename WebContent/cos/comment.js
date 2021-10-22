@@ -88,7 +88,7 @@ function cmReplyOpen(comment_num) {
 	} else {
 		// 댓글 답변창 open
 		window.name = "parentForm";
-		window.open("/CommentReplyFormAction.do?num=" + comment_num,
+		window.open("./CommentReplyFormAction.do?num=" + comment_num,
 				"replyForm",
 				"width=570, height=350, resizable = no, scrollbars = no");
 	}
@@ -115,6 +115,6 @@ function deleteCmt(comment_num) {
 }
 function cmUpdateOpen(comment_num) {
 	window.name = "parentForm";
-	window.open("/CommentUpdateFormAction.do?num=" + comment_num, "updateForm",
+	window.open("./CommentUpdateFormAction.do?num=" + comment_num, "updateForm",
 			"width=570, height=350, resizable= no, scrollbars = no");
 }

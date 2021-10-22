@@ -182,7 +182,7 @@
 						<th width="150">
 							<div>
 								<c:if test="${comment.comment_level > 1}">
-                                &nbsp;&nbsp;&nbsp;&nbsp; <!-- 답변글일경우 아이디 앞에 공백을 준다. -->
+                                &nbsp;&nbsp;&nbsp;&nbsp; 답글<!-- 답변글일경우 아이디 앞에 공백을 준다. -->
 								</c:if>
 
 

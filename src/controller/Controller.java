@@ -349,7 +349,7 @@ public class Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/CommentReplyAction.do")) {
+		} else if (command.equals("/cos/CommentReplyAction.do")) {
 			try {
 				action = new CommentReplyAction();
 				action.execute(request, response);
@@ -370,7 +370,7 @@ public class Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/CommentUpdateAction.do")) {
+		} else if (command.equals("/cos/CommentUpdateAction.do")) {
 			try {
 				action = new CommentUpdateAction();
 				action.execute(request, response);
