@@ -31,15 +31,16 @@
 
 		</tr>
 	</c:forEach>
-	</tbody>
-</table>
-<br>
-<br>
-<div style="font-family: none; float: right;">
-	<a href="./GatherForm.do">글쓰기</a> <br> 모임 갯수 : ${listcount}개
-</div>
-<br>
-
+	<tr>
+		<td colspan="5" align="right" style="padding:initial; border-bottom:none;"><a
+			href="./GatherForm.do">글쓰기</a></td>
+	</tr>
+	<tr>
+		<td colspan="5" align="right" style="padding:initial; border-bottom: none;">모임 갯수
+			: ${listcount}개</td>
+	</tr>
+	<tr>
+		<td colspan="5" align="center" style="padding:initial;border-bottom: none;">
 <!-- 페이지 처리 -->
 <center>
 	<c:if test="${listcount > 0}">
@@ -73,6 +74,15 @@
 		<a href="./GatherListAction.do?page=${pageCount}"> >> </a>
 	</c:if>
 </center>
+		
+		</td>
+	</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<br>
+
 
 
 
