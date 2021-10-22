@@ -153,30 +153,31 @@
 
 	<!-- 댓글 부분 -->
 	<div id="comment">
-		<table border="1" bordercolor="lightgray">
+		<table class="type" 
+			style="align: center;">
 			<!-- 댓글 목록 -->
 			<c:if test="${requestScope.commentList != null}">
 				<c:forEach var="comment" items="${requestScope.commentList}">
 
 					<tr>
 						<!-- 아이디, 작성날짜 -->
-						<td width="150">
+						<th width="150">
 							<div>
 								<c:if test="${comment.comment_level > 1}">
                                 &nbsp;&nbsp;&nbsp;&nbsp; <!-- 답변글일경우 아이디 앞에 공백을 준다. -->
 								</c:if>
 
 
-								${comment.comment_id}<br> <font size="2" color="lightgray">
+								${comment.comment_id}<br> <font size="2">
 									${comment.comment_date}</font>
 							</div>
-						</td>
+						</th>
 						<!-- 본문내용 -->
-						<td width="550">
+						<td width="550" style="">
 							<div class="text_wrapper">${comment.comment_content}</div>
 						</td>
 						<!-- 버튼 -->
-						<td width="100">
+						<th width="100">
 							<div id="btn" style="text-align: center;">
 								<a href="#" onclick="cmReplyOpen(${comment.comment_num})">[답변]</a><br>
 								<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
@@ -186,7 +187,7 @@
 									<a href="#" onclick="cmDeleteOpen(${comment.comment_num})">[삭제]</a>
 								</c:if>
 							</div>
-						</td>
+						</th>
 					</tr>
 
 				</c:forEach>

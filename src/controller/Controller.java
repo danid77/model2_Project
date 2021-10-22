@@ -57,8 +57,8 @@ public class Controller extends HttpServlet {
 
 		Action action = null;
 		ActionForward forward = null;
-		
-			// index 게시판 불러오기
+
+		// index 게시판 불러오기
 		if (command.equals("/index.do")) {
 			try {
 				action = new Index();
@@ -336,48 +336,48 @@ public class Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (command.equals("/CommentWriteAction.do")) {
-            try {
-                action = new CommentWriteAction();
-                action.execute(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else if (command.equals("/CommentReplyFormAction.do")) {
-            try {
-                action = new CommentReplyFormAction();
-                action.execute(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else if (command.equals("/CommentReplyAction.do")) {
-            try {
-                action = new CommentReplyAction();
-                action.execute(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else if (command.equals("/CommentDeleteAction.do")) {
-            try {
-                action = new CommentDeleteAction();
-                action.execute(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else if (command.equals("/CommentUpdateFormAction.do")) {
-            try {
-                action = new CommentUpdateFormAction();
-                action.execute(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else  if (command.equals("/CommentUpdateAction.do")){
-            try{
-                action = new CommentUpdateAction();
-                action.execute(request, response);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }
+			try {
+				action = new CommentWriteAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/CommentReplyFormAction.do")) {
+			try {
+				action = new CommentReplyFormAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/CommentReplyAction.do")) {
+			try {
+				action = new CommentReplyAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/CommentDeleteAction.do")) {
+			try {
+				action = new CommentDeleteAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/CommentUpdateFormAction.do")) {
+			try {
+				action = new CommentUpdateFormAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/CommentUpdateAction.do")) {
+			try {
+				action = new CommentUpdateAction();
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 		// if(command.equals("/MemberInsert.do")) end
 

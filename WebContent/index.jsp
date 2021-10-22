@@ -5,7 +5,6 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/gathering_table.css">
 <%@ include file="header.jsp"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +13,36 @@
 </head>
 <body>
 
+
 <table class="type" style="margin:auto; width:45%; float:left; margin-left:20px;">
+<caption>등산 페이지</caption>
+	<tr>
+		<th>등산코스명</th>
+		<th>난이도</th>
+		<th>소요시간</th>
+		<th>길찾기</th>
+	</tr>
+
+	<c:forEach var="cos" items="${coslist}">
+		<tr>
+			<td>
+				<a href="./GetCosInfo.do?cosName=${cos.cosName}">${cos.cosName}</a>
+			</td>
+			<td>${cos.cosDifficulty}</td>
+			<td>${cos.cosTakeTime}</td>
+			<td><a href="${cos.cosLink}">길찾기</a></td>
+		</tr>
+	</c:forEach>
+
+	
+	</tbody>
+	
+</table>
+
+
+<table class="type" style="margin:auto; width:45%; float:right; margin-right:20px;">
 	<tbody>
-	<caption>게시판 목록</caption>
+	<caption>모임게시판</caption>
 	<tr>
 		<th>번호</th>
 		<th>모임 이름</th>
@@ -39,31 +65,6 @@
 
 		</tr>
 	</c:forEach>
-	</tbody>
-	
-</table>
-
-
-<table class="type" style="margin:auto; width:45%; float:right; margin-right:20px;">
-	<caption>코스목록</caption>
-	<tr>
-		<th>등산코스명</th>
-		<th>난이도</th>
-		<th>소요시간</th>
-		<th>길찾기</th>
-	</tr>
-
-	<c:forEach var="cos" items="${coslist}">
-		<tr>
-			<td>
-				<a href="./GetCosInfo.do?cosName=${cos.cosName}">${cos.cosName}</a>
-			</td>
-			<td>${cos.cosDifficulty}</td>
-			<td>${cos.cosTakeTime}</td>
-			<td><a href="${cos.cosLink}">길찾기</a></td>
-		</tr>
-	</c:forEach>
-
 
 </table>
 
